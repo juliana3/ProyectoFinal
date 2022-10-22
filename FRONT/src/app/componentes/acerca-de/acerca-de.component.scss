@@ -1,0 +1,43 @@
+
+img{
+    width: 350px;
+    height: 450px;
+    border-radius: 5px 40px;
+    border: 2px solid white ;
+}
+#img-yo{
+    padding-top: 50px;
+    padding-left: 35px;
+}
+
+#nombre-tit h2{
+    font-weight:bolder;
+    color:black;
+   text-align: left;
+   padding-top:150px;
+   padding-left:75px;
+}
+#nombre-tit p{
+    color:black;
+   text-align: left;
+   padding-top:0px;
+   padding-left:85px;
+   font-size:0.5cm;
+}
+#sobre-mi{
+    text-align: center;
+}
+#sobre-mi h2{
+    font-weight:bolder;
+    color:black;
+}
+#sobre-mi p{
+    font-size:0.5cm;
+    color:black;
+}
+body{
+    background-color: #E3716D;
+}
+.container{
+    padding-bottom: 50px;
+}
