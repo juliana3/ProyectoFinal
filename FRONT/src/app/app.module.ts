@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,9 @@ import { HabilidadesComponent } from './componentes/habilidades/habilidades.comp
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { LoginComponent } from './componentes/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -27,12 +31,15 @@ import { FooterComponent } from './componentes/footer/footer.component';
     EstudiosComponent,
     HabilidadesComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
