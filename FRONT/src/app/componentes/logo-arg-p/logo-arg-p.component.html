@@ -11,7 +11,10 @@
                 <img src="../../../assets/imagenes/iconos/twitter.svg" id="twitter">
             </a>
             <!--BOTON LOGIN-->
-            <button type="button" class="btn btn-outline-light" (click)="login()"> INGRESAR</button>
+            <button type="button" class="btn btn-outline-light" (click)="login()"
+            *ngIf="!isLogged">INGRESAR</button>
+            <button type="button" class="btn btn-outline-light" (click)="onLogOut()"
+            *ngIf="isLogged"> CERRAR SESION</button>
         </div>
     </div>
 </div>
