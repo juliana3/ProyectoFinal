@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginUsuario } from 'src/app/model/login-usuario';
-import { TokenService } from 'src/app/model/token.service';
-import { AuthService } from 'src/app/model/auth.service';
+import { TokenService } from 'src/app/service/token.service';
+import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
 
 
@@ -13,17 +13,18 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   isLogged = false;
   isLogginDail = false;
-  loginUsuario: LoginUsuario;
-  nombreUsuario: string;
-  password: string;
-  roles: string[];
-  errMsj: string;
+  loginUsuario!: LoginUsuario;
+  nombreUsuario!: string;
+  password!: string;
+  roles: string[] = [];
+  errMsj!: string;
 
 
-  constructor(private tokenService: TokenService, private authService: AuthService, private router: Router) { }
+  constructor(private tokenService: TokenService, 
+    private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    if(tokenService.getToken()){
+    if(this.tokenService.getToken()){
       this.isLogged = true;
       this.isLogginDail = false;
       this.roles = this.tokenService.getAuthorities();
@@ -37,8 +38,8 @@ export class LoginComponent implements OnInit {
         data =>{
           this.isLogged = true;
           this.isLogginDail = false;
-          this.tokenService.serToken(data.token);
-          this.tokenService.setUserName(data.nombreUsuario);
+          this.tokenService.setToken(data.token);
+          this.tokenService.setUsername(data.nombreUsuario);
           this.tokenService.setAuthorities(data.authorities);
           this.roles = data.authorities;
           this.router.navigate([''])
