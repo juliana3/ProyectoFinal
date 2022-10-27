@@ -7,7 +7,7 @@ import { NewExperienciaComponent } from './componentes/experiencia/new-experienc
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'login', component: LoginComponent},
-  {path: 'nuevaexp', component: NewExperienciaComponent}
+  {path:'nuevaexp', component: NewExperienciaComponent}
 ];
 
 @NgModule({

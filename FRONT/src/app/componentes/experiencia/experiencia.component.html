@@ -3,10 +3,11 @@
         <h2>Experiencia laboral</h2>
         <div class="col-lg-2">
             <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
-                NUEVA EXPERIENCIA</button>
+                NUEVA EXPERIENCIA
+            </button>
         </div>
         
-        <table class = "table">
+        <table class="table">
             <tbody>
                 <tr *ngFor="let Experiencia of expe">
                     <td>{{Experiencia.nombreE}}</td>
