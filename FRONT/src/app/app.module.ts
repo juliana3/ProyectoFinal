@@ -25,6 +25,7 @@ import { NewEducacionComponent } from './componentes/estudios/new-educacion.comp
 import { EditEducacionComponent } from './componentes/estudios/edit-educacion/edit-educacion.component';
 import { NewHysComponent } from './componentes/habilidades/new-hys/new-hys.component';
 import { EditHysComponent } from './componentes/habilidades/edit-hys/edit-hys.component';
+import { EditAcercaDeComponent } from './componentes/acerca-de/edit-acerca-de/edit-acerca-de.component';
 
 
 
@@ -48,7 +49,8 @@ import { EditHysComponent } from './componentes/habilidades/edit-hys/edit-hys.co
     NewEducacionComponent,
     EditEducacionComponent,
     NewHysComponent,
-    EditHysComponent
+    EditHysComponent,
+    EditAcercaDeComponent
   ],
   imports: [
     BrowserModule,
