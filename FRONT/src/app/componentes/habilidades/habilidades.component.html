@@ -1,13 +1,20 @@
 <body>
     <div class="container">
         <div id="texto">
-            <h2>HABILIDADES BLANDAS Y DURAS</h2>
+            <h2>HABILIDADES DURAS Y BLANDAS</h2>
         </div>
-        <div class="row align-items-center justify-content-between" id="hab">
-            <div class="col-3">
-                <circle-progress
-              [percent]="75"
-              [subtitle]="'HTML'"
+        <div class="col-lg-3 botonNuevo">
+          <button type="button" class="btn btn-dark" routerLink="/nuevahab" *ngIf="isLogged">
+              NUEVA SKILL
+          </button>
+      </div>
+        
+    </div>
+    <div class="row align-items-center justify-content-between circulofila">
+        <div class="col-lg-3 circulocol"  *ngFor="let skill of skill">
+            <circle-progress
+              [percent]="(skill.porcentaje)"
+              [subtitle]="(skill.nombre)"
               [radius]="90"
               [outerStrokeWidth]="16"
               [innerStrokeWidth]="8"
@@ -18,231 +25,21 @@
               [titleColor]="'#000000'"
               [unitsColor]="'#000000'"
               [unitsFontSize]="'0.5cm'"
-              [titleFontSize]="'0.5cm'"
               [subtitleFontSize]="'0.7cm'"
               [subtitleColor]="'#000000'"
               [responsive]="true"
-              >
-            </circle-progress>
-            </div>
-            <div class="col-3">
-                <circle-progress
-              [percent]="75"
-              [subtitle]="'CSS'"
-              [radius]="90"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="8"
-              [outerStrokeColor]="'#FA1C73'"
-              [innerStrokeColor]="'#D586FD'"
-              [animation]="true"
-              [animationDuration]="1000"
-              [titleColor]="'#000000'"
-              [unitsColor]="'#000000'"
-              [unitsFontSize]="'0.5cm'"
-              [titleFontSize]="'0.5cm'"
-              [subtitleFontSize]="'0.7cm'"
-              [subtitleColor]="'#000000'"
-              [responsive]="true"
-              >
-            </circle-progress>
-            </div>
-            <div class="col-3">
-                <circle-progress
-              [percent]="60"
-              [subtitle]="'JAVASCRIPT'"
-              [radius]="90"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="8"
-              [outerStrokeColor]="'#FA1C73'"
-              [innerStrokeColor]="'#D586FD'"
-              [animation]="true"
-              [animationDuration]="1000"
-              [titleColor]="'#000000'"
-              [unitsColor]="'#000000'"
-              [unitsFontSize]="'0.5cm'"
-              [titleFontSize]="'0.5cm'"
-              [subtitleFontSize]="'0.6cm'"
-              [subtitleColor]="'#000000'"
-              [responsive]="true"
-              >
-            </circle-progress>
-            </div>
-            <div class="col-3">
-                <circle-progress
-              [percent]="60"
-              [subtitle]="'C++'"
-              [radius]="90"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="8"
-              [outerStrokeColor]="'#FA1C73'"
-              [innerStrokeColor]="'#D586FD'"
-              [animation]="true"
-              [animationDuration]="1000"
-              [titleColor]="'#000000'"
-              [unitsColor]="'#000000'"
-              [unitsFontSize]="'0.5cm'"
-              [titleFontSize]="'0.5cm'"
-              [subtitleFontSize]="'0.7cm'"
-              [subtitleColor]="'#000000'"
-              [responsive]="true"
-              >
-            </circle-progress>
-            </div>
-            
-        </div>
-        <div class="row align-items-center justify-content-between" id="hab">
-            <div class="col-3">
-                <circle-progress
-              [percent]="90"
-              [subtitle]="'TRABAJO GRUPAL'"
-              [radius]="90"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="8"
-              [outerStrokeColor]="'#FA1C73'"
-              [innerStrokeColor]="'#D586FD'"
-              [animation]="true"
-              [animationDuration]="1000"
-              [titleColor]="'#000000'"
-              [unitsColor]="'#000000'"
-              [unitsFontSize]="'0.5cm'"
-              [titleFontSize]="'0.5cm'"
-              [subtitleFontSize]="'0.45cm'"
-              [subtitleColor]="'#000000'"
-              [responsive]="true"
-              >
-            </circle-progress>
-            </div>
-            <div class="col-3">
-                <circle-progress
-              [percent]="100"
-              [subtitle]="'RESPONSABILIDAD'"
-              [radius]="90"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="8"
-              [outerStrokeColor]="'#FA1C73'"
-              [innerStrokeColor]="'#D586FD'"
-              [animation]="true"
-              [animationDuration]="1000"
-              [titleColor]="'#000000'"
-              [unitsColor]="'#000000'"
-              [unitsFontSize]="'0.5cm'"
-              [titleFontSize]="'0.5cm'"
-              [subtitleFontSize]="'0.42cm'"
-              [subtitleColor]="'#000000'"
-              [responsive]="true"
-              >
-            </circle-progress>
-            </div>
-            <div class="col-3">
-                <circle-progress
-              [percent]="80"
-              [subtitle]="'CREATIVIDAD'"
-              [radius]="90"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="8"
-              [outerStrokeColor]="'#FA1C73'"
-              [innerStrokeColor]="'#D586FD'"
-              [animation]="true"
-              [animationDuration]="1000"
-              [titleColor]="'#000000'"
-              [unitsColor]="'#000000'"
-              [unitsFontSize]="'0.5cm'"
-              [titleFontSize]="'0.5cm'"
-              [subtitleFontSize]="'0.57cm'"
-              [subtitleColor]="'#000000'"
-              [responsive]="true"
-              >
-            </circle-progress>
-            </div>
-            <div class="col-3">
-                <circle-progress
-              [percent]="95"
-              [subtitle]="'PERTENENCIA'"
-              [radius]="90"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="8"
-              [outerStrokeColor]="'#FA1C73'"
-              [innerStrokeColor]="'#D586FD'"
-              [animation]="true"
-              [animationDuration]="1000"
-              [titleColor]="'#000000'"
-              [unitsColor]="'#000000'"
-              [unitsFontSize]="'0.5cm'"
-              [titleFontSize]="'0.5cm'"
-              [subtitleFontSize]="'0.57cm'"
-              [subtitleColor]="'#000000'"
-              [responsive]="true"
-              >
-            </circle-progress>
-            </div>
-            
-        </div>
-        <div class="row align-items-center justify-content-between" id="idiomas">
-            <div id="texto">
-                <h3>IDIOMAS</h3>
-            </div>
-            <div class="col-4" id="ingles">
-                <circle-progress
-              [percent]="50"
-              [subtitle]="'INGLES'"
-              [radius]="90"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="8"
-              [outerStrokeColor]="'#FA1C73'"
-              [innerStrokeColor]="'#D586FD'"
-              [animation]="true"
-              [animationDuration]="1000"
-              [titleColor]="'#000000'"
-              [unitsColor]="'#000000'"
-              [unitsFontSize]="'0.5cm'"
-              [titleFontSize]="'0.5cm'"
-              [subtitleFontSize]="'0.7cm'"
-              [subtitleColor]="'#000000'"
-              [responsive]="true"
-              >
-            </circle-progress>
-            </div>
-            <div class="col-4" id="español">
-                <circle-progress
-              [percent]="100"
-              [subtitle]="'ESPAÑOL'"
-              [radius]="90"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="8"
-              [outerStrokeColor]="'#FA1C73'"
-              [innerStrokeColor]="'#D586FD'"
-              [animation]="true"
-              [animationDuration]="1000"
-              [titleColor]="'#000000'"
-              [unitsColor]="'#000000'"
-              [unitsFontSize]="'0.5cm'"
-              [titleFontSize]="'0.5cm'"
-              [subtitleFontSize]="'0.7cm'"
-              [subtitleColor]="'#000000'"
-              [responsive]="true"
-              >
-            </circle-progress>
-            </div>
-            <div class="col-4" id="italiano">
-                <circle-progress
-              [percent]="25"
-              [subtitle]="'ITALIANO'"
-              [radius]="90"
-              [outerStrokeWidth]="16"
-              [innerStrokeWidth]="8"
-              [outerStrokeColor]="'#FA1C73'"
-              [innerStrokeColor]="'#D586FD'"
-              [animation]="true"
-              [animationDuration]="1000"
-              [titleColor]="'#000000'"
-              [unitsColor]="'#000000'"
-              [unitsFontSize]="'0.5cm'"
-              [titleFontSize]="'0.5cm'"
-              [subtitleFontSize]="'0.7cm'"
-              [subtitleColor]="'#000000'"
-              [responsive]="true"
-              >
-            </circle-progress>
+            ></circle-progress>
+            <div class="botones">
+               <td *ngIf="isLogged">
+                <button id="edicion" routerLink="edithab/{{skill.id}}">
+                    <img src="../../../assets/imagenes/iconos/editar.svg" class="img-fluid" id="edicion">
+                </button>
+              </td>
+              <td *ngIf="isLogged">
+                <button id="edicion" (click)="delete(skill.id)">
+                    <img src="../../../assets/imagenes/iconos/borrar.svg" class="img-fuid" id="edicion">
+                </button>
+              </td>
             </div>
         </div>
     </div>
