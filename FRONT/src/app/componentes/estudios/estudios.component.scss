@@ -1,37 +1,29 @@
 body{
     background-color : #76BFF9;
 }
+
 .container{
     padding-top: 100px;
     padding-bottom:50px;
-}
-.container h2 h4 p li{
-    color:black
 }
 h2{
     font-size: 1.2cm;
     font-weight: bolder;
     color:black;
+    padding-bottom:50px;
 }
-h4,h5{
-    display:inline;
+h3{
     color:black;
 }
-#listado-est{
-    padding-top: 80px;
-    padding-left: 150px;
+td{
+    color:black;
 }
-#fich{
-    padding-top:50px;
-    padding-bottom:0;
+#edicion{
+    width:50px;
+    height:50px;
 }
-#AP{
-    padding-top: 15px;
-    padding-left:8px;
-    padding-bottom:15px;
-}
-#EOA{
-    padding-top: 30px;
-    padding-left:20px;
-    padding-bottom:5px;
+ #edicion{
+    background: none;
+    padding: 0;
+    border: none;
 }

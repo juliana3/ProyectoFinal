@@ -1,19 +1,29 @@
 body{
     background-color: #C576F9;
 }
+
 .container{
     padding-top: 100px;
     padding-bottom:50px;
-}
-.container h2 h4 p li{
-    color:black
 }
 h2{
     font-size: 1.2cm;
     font-weight: bolder;
     color:black;
+    padding-bottom:50px;
 }
-h4,h5{
-    display:inline;
+h3{
     color:black;
+}
+td{
+    color:black;
+}
+#edicion{
+    width:50px;
+    height:50px;
+}
+ #edicion{
+    background: none;
+    padding: 0;
+    border: none;
 }

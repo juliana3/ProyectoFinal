@@ -1,39 +1,30 @@
 <body>
     <div class="container">
         <h2>Estudios</h2>
-        <div class="row align-items-center justify-content-between">
-            <div class="col-2" id="logos-estudios">
-                <div id="fich"><img src="../../../../../assets/imagenes/iconos/logo-fich-694x272.png"
-                 width="250px" height="100px"></div>
-                <div id="AP"><img src="../../../../../assets/imagenes/iconos/arg-programa.png"
-                 width="160px" height="60px"></div>
-                <div id="EOA"><img src="../../../../../assets/imagenes/iconos/logoEOA.png"
-                 width="150px" height="50px"></div>
-            </div>
-            <div class="col-10" id="listado-est">
-                <ul>
-                    <li>
-                        <h4>Ingeniería en Informática</h4> - <h5>(2020-Actualidad)</h5>
-                        <p>- Universidad Nacional del Litoral <br> 
-                            - Facultad de Ingeniería y Ciencias Hídricas</p>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <h4>Desarrollo web Full Stack</h4> - <h5>(2021-2022)</h5>
-                        <p>- Full Stack Developer Jr. <br>
-                        - Argentina Programa</p>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <h4>Robótica y Sistemas de control</h4> - <h5>(2022)</h5>
-                        <p>- En Curso <br>
-                           - Escuela de Oficios Artísticos </p>
-                    </li>
-                </ul>
-            </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
+                NUEVO
+            </button>
         </div>
+        
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Educacion of edu">
+                    <td><h3>{{Educacion.nombreEd}}</h3></td>
+                    <td>{{Educacion.descripcionEd}}</td>
+                    <td *ngIf="isLogged">
+                        <button id="edicion" routerLink="editedu/{{Educacion.id}}">
+                            <img src="../../../assets/imagenes/iconos/editar.svg" class="img-fluid" id="edicion">
+                        </button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button id="edicion" (click)="delete(Educacion.id)">
+                            <img src="../../../assets/imagenes/iconos/borrar.svg" class="img-fuid" id="edicion">
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
 
+        </table>
     </div>
 </body>
