@@ -18,7 +18,7 @@ public class ImpPersonaService {
     @Autowired 
     IPersonaRepository ipersonaRepository;
     
-     public List<Persona> list(){
+    public List<Persona> list(){
         return ipersonaRepository.findAll();
     }
     public Optional<Persona> getOne(int id){

@@ -93,6 +93,6 @@ public class PersonaController {
         
         personaService.save(persona);
         
-        return new ResponseEntity(new Mensaje("Educacion actualizada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Informacion actualizada"), HttpStatus.OK);
     }
 }

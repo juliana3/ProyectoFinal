@@ -1,23 +1,33 @@
 <body>
     <div class="container">
-        <div id="tit">
-            <h2>PROYECTOS REALIZADOS</h2>
+        <div id="texto">
+            <h2>PROYECTOS</h2>
         </div>
-        <div class="row align-items-center justify-content-between">
-            <div class="col-4">
-                <!--IMAGEN DEL PORTFOLIO-->
-                <a href ="">
-                    <img src="../../../../../assets/imagenes/portfolio-proyect.PNG" 
-                     class ="img-fluid" id="img-portfolio">
-                </a>
-            </div>
-            <div class=col-8 id="descrip">
-                <a href=""><h3>Portfolio web</h3></a>
-                <p>- 2022 <br> 
-                    - Portfolio web hecho como proyecto final de la formación Argentina Programa.
-                  Estructurado en Angular y con lenguajes como Javascript.
-                  Base de datos hecha en bcdubvubfvufvbu COMPLETAR!!! </p>
-            </div>
-        </div>
+        <div class="col-lg-3 botonNuevo">
+          <button type="button" class="btn btn-dark" routerLink="/nuevoproy" *ngIf="isLogged">
+              NUEVO PROYECTO
+          </button>
+      </div>
+        
     </div>
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let Proyecto of proye">
+                <td><h3>{{Proyecto.nombrePr}}</h3></td>
+                <td>{{Proyecto.descripcionPr}}</td>
+                <td><a href="{{Proyecto.linkPr}}">Portfolio</a></td>
+                <td *ngIf="isLogged">
+                    <button id="edicion" routerLink="/editproy/{{Proyecto.id}}">
+                        <img src="../../../assets/imagenes/iconos/editar.svg" class="img-fluid" id="edicion">
+                    </button>
+                </td>
+                <td *ngIf="isLogged">
+                    <button id="edicion" (click)="delete(Proyecto.id)">
+                        <img src="../../../assets/imagenes/iconos/borrar.svg" class="img-fuid" id="edicion">
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
 </body>

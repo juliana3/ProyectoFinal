@@ -9,6 +9,8 @@ import { EditEducacionComponent } from './componentes/estudios/edit-educacion/ed
 import { NewHysComponent } from './componentes/habilidades/new-hys/new-hys.component';
 import { EditHysComponent } from './componentes/habilidades/edit-hys/edit-hys.component';
 import { EditAcercaDeComponent } from './componentes/acerca-de/edit-acerca-de/edit-acerca-de.component';
+import { EditProyectoComponent } from './componentes/proyectos/edit-proyecto/edit-proyecto.component';
+import { NewProyectoComponent } from './componentes/proyectos/new-proyecto/new-proyecto.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -19,7 +21,9 @@ const routes: Routes = [
   {path:'editedu/:id', component: EditEducacionComponent},
   {path:'nuevahab', component: NewHysComponent},
   {path:'edithab/:id', component: EditHysComponent},
-  {path:'editacercade/:id', component: EditAcercaDeComponent}
+  {path:'editacercade/:id', component: EditAcercaDeComponent},
+  {path:'nuevoproy', component: NewProyectoComponent},
+  {path:'editproy/:id', component: EditProyectoComponent},
 ];
 
 @NgModule({

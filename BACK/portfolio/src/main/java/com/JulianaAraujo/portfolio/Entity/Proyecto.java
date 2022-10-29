@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.JulianaAraujo.portfolio.Entity;
 
 import javax.persistence.Entity;
@@ -12,8 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Persona {
-    
+public class Proyecto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -23,27 +19,23 @@ public class Persona {
     private String nombre;
     
     @NotNull
-    @Size(min =1 , max= 50, message="No cumple con la longitud")
-    private String apellido;
-    
-    @NotNull
-    @Size(min =1 , max= 10000, message="No cumple con la longitud")
+    @Size(min =1 , max= 200, message="No cumple con la longitud")
     private String descripcion;
     
-    private String img;
+    
+    @NotNull
+    private String link;
+    
 
-    public Persona() {
+    public Proyecto() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String img) {
+    public Proyecto(String nombre, String descripcion, String link) {
         this.nombre = nombre;
-        this.apellido = apellido;
         this.descripcion = descripcion;
-        this.img = img;
+        this.link = link;
     }
 
-    
-    
     public int getId() {
         return id;
     }
@@ -60,14 +52,6 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-    
     public String getDescripcion() {
         return descripcion;
     }
@@ -76,13 +60,13 @@ public class Persona {
         this.descripcion = descripcion;
     }
     
-    public String getImg() {
-        return img;
+    
+    
+    public String getLink() {
+        return link;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setLink(String link) {
+        this.link = link;
     }
-    
-    
 }
