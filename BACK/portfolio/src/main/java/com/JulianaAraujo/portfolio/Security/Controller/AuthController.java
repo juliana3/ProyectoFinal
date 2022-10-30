@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin
+@CrossOrigin(origins = "https://ja-frontend.web.app")
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -67,6 +67,7 @@ public class AuthController {
         
         if(nuevoUsuario.getRoles().contains("admin"))
             roles.add(rolService.getByRolNombre(RolNombre.ROLE_ADMIN).get());
+        
         usuario.setRoles(roles);
         usuarioService.save(usuario);
         

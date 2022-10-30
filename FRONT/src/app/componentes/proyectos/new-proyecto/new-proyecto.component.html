@@ -1,7 +1,7 @@
 <body>
     <div class="row">
         <div>
-            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm" method="POST">
                 <div class="form-group">
                     <label for="nombrePr"><strong>NOMBRE</strong></label>
                     <input type="text" class="form-control" id="nombrePr" name="nombrePr" [(ngModel)]="nombrePr" required>
@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-group">
                     <label for="linkPr"><strong>LINK</strong></label>
-                    <input type="url" class="form-control" id="linkPr" name="linkPr" [(ngModel)]="linkPr" required>
+                    <input type="text" class="form-control" id="linkPr" name="linkPr" [(ngModel)]="linkPr" required>
                 </div>
                 <button type="submit" class="btn btn-dark">AGREGAR</button>
             </form>

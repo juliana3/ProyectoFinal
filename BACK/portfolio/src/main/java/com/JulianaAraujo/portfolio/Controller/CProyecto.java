@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/proyectos")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://ja-frontend.web.app")
 public class CProyecto {
     @Autowired
     SProyecto sProyecto;
@@ -48,13 +48,12 @@ public class CProyecto {
     
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoProyecto dtoproy){
-        if(StringUtils.isBlank(dtoproy.getNombre()))
+        if(StringUtils.isBlank(dtoproy.getNombrePr()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        if(sProyecto.existsByNombre(dtoproy.getNombre()))
+        if(sProyecto.existsByNombrePr(dtoproy.getNombrePr()))
             return new ResponseEntity(new Mensaje("Ese proyecto ya existe"), HttpStatus.BAD_REQUEST);
         
-        Proyecto proye = new Proyecto(dtoproy.getNombre(), 
-                dtoproy.getDescripcion(), dtoproy.getLink()
+        Proyecto proye = new Proyecto(dtoproy.getNombrePr(), dtoproy.getDescripcionPr(), dtoproy.getLinkPr()
         );
         sProyecto.save(proye);
         
@@ -66,19 +65,19 @@ public class CProyecto {
         if(!sProyecto.existsById(id)){
             return new ResponseEntity(new Mensaje("Ese ID no existe"), HttpStatus.NOT_FOUND);
         }
-        if(sProyecto.existsByNombre(dtoproy.getNombre()) && 
-                sProyecto.getByNombre(dtoproy.getNombre()).get().getId() != id){
+        if(sProyecto.existsByNombrePr(dtoproy.getNombrePr()) && 
+                sProyecto.getByNombrePr(dtoproy.getNombrePr()).get().getId() != id){
             return new ResponseEntity(new Mensaje("Ese nombre ya esiste"), HttpStatus.BAD_REQUEST);
         }
-        if(StringUtils.isBlank(dtoproy.getNombre())){
+        if(StringUtils.isBlank(dtoproy.getNombrePr())){
             return new ResponseEntity(new Mensaje("El nombre es obligatoria"), HttpStatus.BAD_REQUEST);
         }
         
         Proyecto proye = sProyecto.getOne(id).get();
         
-        proye.setNombre(dtoproy.getNombre());
-        proye.setDescripcion(dtoproy.getDescripcion());
-        proye.setLink(dtoproy.getLink());
+        proye.setNombrePr(dtoproy.getNombrePr());
+        proye.setDescripcionPr(dtoproy.getDescripcionPr());
+        proye.setLinkPr(dtoproy.getLinkPr());
         
         sProyecto.save(proye);
         

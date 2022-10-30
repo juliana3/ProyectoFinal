@@ -15,8 +15,7 @@ export class NewProyectoComponent implements OnInit {
   linkPr: string ='';
   
 
-  constructor(private pService: ProyectoService, private router: Router,
-    private activatedRouter: ActivatedRoute,public imageService: ImageService ) { }
+  constructor(private pService: ProyectoService, private router: Router) { }
 
   ngOnInit(): void {
   }

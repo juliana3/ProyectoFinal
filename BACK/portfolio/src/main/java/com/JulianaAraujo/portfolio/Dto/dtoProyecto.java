@@ -9,47 +9,45 @@ import javax.validation.constraints.NotBlank;
 
 public class dtoProyecto {
     @NotBlank
-   private String nombre;
+   private String nombrePr;
     
     @NotBlank
-   private String descripcion;
+   private String descripcionPr;
     
     @NotBlank
-    private String link;
+    private String linkPr;
 
     public dtoProyecto() {
     }
 
-    public dtoProyecto(String nombre, String descripcion, String link) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.link = link;
+    public dtoProyecto(String nombrePr, String descripcionPr, String linkPr) {
+        this.nombrePr = nombrePr;
+        this.descripcionPr = descripcionPr;
+        this.linkPr = linkPr;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombrePr() {
+        return nombrePr;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombrePr(String nombrePr) {
+        this.nombrePr = nombrePr;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescripcionPr() {
+        return descripcionPr;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-    
-   
-    
-    public String getLink() {
-        return link;
+    public void setDescripcionPr(String descripcionPr) {
+        this.descripcionPr = descripcionPr;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public String getLinkPr() {
+        return linkPr;
     }
-    
+
+    public void setLinkPr(String linkPr) {
+        this.linkPr = linkPr;
+    }
+
 }

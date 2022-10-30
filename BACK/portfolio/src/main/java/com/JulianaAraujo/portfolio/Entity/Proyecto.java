@@ -16,24 +16,24 @@ public class Proyecto {
     
     @NotNull
     @Size(min =1 , max= 50, message="No cumple con la longitud")
-    private String nombre;
+    private String nombrePr;
     
     @NotNull
     @Size(min =1 , max= 200, message="No cumple con la longitud")
-    private String descripcion;
+    private String descripcionPr;
     
     
     @NotNull
-    private String link;
-    
+    @Size(min =1 , max= 200, message="No cumple con la longitud")
+    private String linkPr;
 
     public Proyecto() {
     }
 
-    public Proyecto(String nombre, String descripcion, String link) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.link = link;
+    public Proyecto(String nombrePr, String descripcionPr, String linkPr) {
+        this.nombrePr = nombrePr;
+        this.descripcionPr = descripcionPr;
+        this.linkPr = linkPr;
     }
 
     public int getId() {
@@ -44,29 +44,27 @@ public class Proyecto {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombrePr() {
+        return nombrePr;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombrePr(String nombrePr) {
+        this.nombrePr = nombrePr;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescripcionPr() {
+        return descripcionPr;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-    
-    
-    
-    public String getLink() {
-        return link;
+    public void setDescripcionPr(String descripcionPr) {
+        this.descripcionPr = descripcionPr;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public String getLinkPr() {
+        return linkPr;
+    }
+
+    public void setLinkPr(String linkPr) {
+        this.linkPr = linkPr;
     }
 }
